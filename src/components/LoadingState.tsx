@@ -1,3 +1,28 @@
-export function LoadingState({ label = 'Loading workspace…' }: { label?: string }) {
-  return <div role="status" aria-label={label} className="grid min-h-0 flex-1 grid-cols-3 gap-4"><div className="space-y-3 rounded-xl bg-orange-50/60 p-3"><div className="h-5 w-24 animate-pulse rounded bg-orange-100"/><div className="h-28 animate-pulse rounded-xl bg-white"/><div className="h-24 animate-pulse rounded-xl bg-white"/></div><div className="space-y-3 rounded-xl bg-orange-50/60 p-3"><div className="h-5 w-32 animate-pulse rounded bg-orange-100"/><div className="h-28 animate-pulse rounded-xl bg-white"/><div className="h-32 animate-pulse rounded-xl bg-white"/></div><div className="space-y-3 rounded-xl bg-orange-50/60 p-3"><div className="h-5 w-20 animate-pulse rounded bg-orange-100"/><div className="h-24 animate-pulse rounded-xl bg-white"/></div></div>
+export function LoadingState({
+  label = "Loading workspace…",
+}: {
+  label?: string;
+}) {
+  return (
+    <div
+      role="status"
+      aria-label={label}
+      className="grid min-h-0 flex-1 grid-cols-3 gap-4"
+    >
+      <div className="space-y-3 rounded-xl bg-orange-50/60 p-3">
+        <div className="h-5 w-24 animate-pulse rounded bg-orange-100" />
+        <div className="h-28 animate-pulse rounded-xl bg-white" />
+        <div className="h-24 animate-pulse rounded-xl bg-white" />
+      </div>
+      <div className="space-y-3 rounded-xl bg-orange-50/60 p-3">
+        <div className="h-5 w-32 animate-pulse rounded bg-orange-100" />
+        <div className="h-28 animate-pulse rounded-xl bg-white" />
+        <div className="h-32 animate-pulse rounded-xl bg-white" />
+      </div>
+      <div className="space-y-3 rounded-xl bg-orange-50/60 p-3">
+        <div className="h-5 w-20 animate-pulse rounded bg-orange-100" />
+        <div className="h-24 animate-pulse rounded-xl bg-white" />
+      </div>
+    </div>
+  );
 }

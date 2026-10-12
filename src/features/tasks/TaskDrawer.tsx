@@ -153,7 +153,9 @@ export function TaskDrawer({ task }: { task: Task | null }) {
               value={draft.description}
               onChange={(event) => update("description", event.target.value)}
             />
-            <p className="mt-1 text-xs text-slate-400">{draft.description.length}/2000 characters</p>
+            <p className="mt-1 text-xs text-slate-400">
+              {draft.description.length}/2000 characters
+            </p>
           </div>
           <section className="mt-7">
             <h3 className="mb-3 text-sm font-bold text-slate-800">Activity</h3>

@@ -1,8 +1,6 @@
 # Flowboard
 
-<p align="center">
-  <img src="./public/flowboard-logo.png" alt="Flowboard" width="360" />
-</p>
+![Flowboard](./public/flowboard-logo.png)
 
 Flowboard is a frontend-only project workspace built for the task-management take-home assignment. It is designed to feel like a small, professional productivity product rather than a static CRUD demo: users can navigate a permission-aware workspace hierarchy, switch between Kanban and list views, create and edit tasks, drag tasks between statuses, bulk-update selected tasks, and recover from simulated failures.
 
@@ -45,22 +43,22 @@ No backend, database, environment variables, or deployment configuration are req
 
 The core requirements and selected stretch goals are implemented in the current build:
 
-| Assignment area | Implementation |
-| --- | --- |
-| Workspace hierarchy | Workspace → space → folder → list tree with breadcrumbs and active selection |
-| Board and list views | Toggleable Kanban/list views with persisted task changes and list sorting |
-| Task management | Create, edit, assign, prioritize, schedule, describe, archive, and bulk-update tasks |
-| Permissions | Public/private visibility, allow/deny grants, member switching, and admin-only hierarchy actions |
-| Interaction quality | Loading states, empty states, error toasts, hover/focus/active states, confirmations, and drop-target feedback |
-| Keyboard controls | `Cmd/Ctrl + K` search shortcut and `Escape` to close dialogs/drawers |
-| Responsive UX | Mobile navigation drawer, stacked board columns, responsive forms, compact top bar, and dense-table scrolling |
-| Drag and drop | Visible insertion preview, highlighted drop target, status/position persistence, and empty-column handling |
-| Nice-to-have: search | Client-side task title/description search with keyboard focus shortcut |
-| Nice-to-have: activity | Task activity section records task updates and archive events |
-| Nice-to-have: bulk actions | Multi-select tasks and update status or assignee in one action |
-| Nice-to-have: sorting | Sort list view by due date or priority in ascending/descending order |
-| Nice-to-have: robust states | Deterministic simulated failures, permission errors, validation feedback, and recovery-safe state updates |
-| Nice-to-have: polished UI | Consistent spacing, standard Lucide icons, light-orange theme, responsive behavior, modals, drawer editing, and card/drop interactions |
+| Assignment area             | Implementation                                                                                                                         |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Workspace hierarchy         | Workspace → space → folder → list tree with breadcrumbs and active selection                                                           |
+| Board and list views        | Toggleable Kanban/list views with persisted task changes and list sorting                                                              |
+| Task management             | Create, edit, assign, prioritize, schedule, describe, archive, and bulk-update tasks                                                   |
+| Permissions                 | Public/private visibility, allow/deny grants, member switching, and admin-only hierarchy actions                                       |
+| Interaction quality         | Loading states, empty states, error toasts, hover/focus/active states, confirmations, and drop-target feedback                         |
+| Keyboard controls           | `Cmd/Ctrl + K` search shortcut and `Escape` to close dialogs/drawers                                                                   |
+| Responsive UX               | Mobile navigation drawer, stacked board columns, responsive forms, compact top bar, and dense-table scrolling                          |
+| Drag and drop               | Visible insertion preview, highlighted drop target, status/position persistence, and empty-column handling                             |
+| Nice-to-have: search        | Client-side task title/description search with keyboard focus shortcut                                                                 |
+| Nice-to-have: activity      | Task activity section records task updates and archive events                                                                          |
+| Nice-to-have: bulk actions  | Multi-select tasks and update status or assignee in one action                                                                         |
+| Nice-to-have: sorting       | Sort list view by due date or priority in ascending/descending order                                                                   |
+| Nice-to-have: robust states | Deterministic simulated failures, permission errors, validation feedback, and recovery-safe state updates                              |
+| Nice-to-have: polished UI   | Consistent spacing, standard Lucide icons, light-orange theme, responsive behavior, modals, drawer editing, and card/drop interactions |
 
 The implementation deliberately does not expose inactive placeholder controls. Every visible control has a meaningful behavior, while failure simulation remains a store/test capability so reviewers can verify unhappy paths without introducing a demo-only settings panel.
 
@@ -79,15 +77,15 @@ flowchart TD
 
 Important boundaries:
 
-| Area | Responsibility |
-| --- | --- |
-| `src/features/layout` | Responsive sidebar, hierarchy tree, top bar, user switcher |
-| `src/features/tasks` | Board, list, task cards, create dialog, task drawer |
-| `src/components` | Shared loading, toast, and task presentation helpers |
-| `src/models` | Domain types and deterministic seed data |
-| `src/services/access.ts` | Centralized container access rules |
+| Area                     | Responsibility                                                         |
+| ------------------------ | ---------------------------------------------------------------------- |
+| `src/features/layout`    | Responsive sidebar, hierarchy tree, top bar, user switcher             |
+| `src/features/tasks`     | Board, list, task cards, create dialog, task drawer                    |
+| `src/components`         | Shared loading, toast, and task presentation helpers                   |
+| `src/models`             | Domain types and deterministic seed data                               |
+| `src/services/access.ts` | Centralized container access rules                                     |
 | `src/stores/appStore.ts` | State, selectors, mutation validation, persistence, failure simulation |
-| `src/tests` | Access, mutation, hierarchy, and interaction regression tests |
+| `src/tests`              | Access, mutation, hierarchy, and interaction regression tests          |
 
 `App.tsx` is intentionally a composition layer. Feature behavior lives in focused components and store/service modules rather than one large page component.
 

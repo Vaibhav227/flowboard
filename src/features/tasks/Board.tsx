@@ -38,7 +38,12 @@ function KanbanColumn({ status, tasks }: { status: Status; tasks: Task[] }) {
         </div>
       </header>
       <div className="min-h-28 space-y-1 rounded-lg">
-        {tasks.map((task, index) => <div key={task.id}><DropSlot id={`${status.id}:${index}`} /><TaskCard task={task} /></div>)}
+        {tasks.map((task, index) => (
+          <div key={task.id}>
+            <DropSlot id={`${status.id}:${index}`} />
+            <TaskCard task={task} />
+          </div>
+        ))}
         <DropSlot id={`${status.id}:${tasks.length}`} />
         {tasks.length === 0 && (
           <div className="flex h-24 items-center justify-center rounded-lg border border-dashed border-slate-300 text-xs text-slate-400">
@@ -50,4 +55,13 @@ function KanbanColumn({ status, tasks }: { status: Status; tasks: Task[] }) {
   );
 }
 
-function DropSlot({ id }: { id: string }) { const { setNodeRef, isOver } = useDroppable({ id }); return <div ref={setNodeRef} className={`h-2 rounded-md transition ${isOver ? "h-10 bg-orange-100 ring-2 ring-inset ring-orange-300" : ""}`} aria-label="Drop task here" /> }
+function DropSlot({ id }: { id: string }) {
+  const { setNodeRef, isOver } = useDroppable({ id });
+  return (
+    <div
+      ref={setNodeRef}
+      className={`h-2 rounded-md transition ${isOver ? "h-10 bg-orange-100 ring-2 ring-inset ring-orange-300" : ""}`}
+      aria-label="Drop task here"
+    />
+  );
+}

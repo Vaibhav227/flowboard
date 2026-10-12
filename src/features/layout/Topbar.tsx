@@ -30,7 +30,13 @@ export function Topbar({
 
   return (
     <header className="flex h-16 shrink-0 items-center justify-between gap-3 border-b border-orange-100 bg-white px-4 md:px-6">
-      <button className="icon-button md:hidden" aria-label="Open workspace navigation" onClick={onMenuOpen}><Menu size={20}/></button>
+      <button
+        className="icon-button md:hidden"
+        aria-label="Open workspace navigation"
+        onClick={onMenuOpen}
+      >
+        <Menu size={20} />
+      </button>
       <label className="relative block min-w-0 flex-1 md:w-[320px] md:flex-none">
         <Search className="absolute left-3 top-2.5 text-slate-400" size={17} />
         <input

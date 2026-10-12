@@ -65,7 +65,6 @@ export function App() {
     return () => window.clearTimeout(timer);
   }, [state.selectedListId, state.view]);
 
-
   useEffect(() => {
     if (!state.notice && !state.lastError) return;
     const timer = window.setTimeout(state.clearNotice, 3500);
