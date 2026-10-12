@@ -114,10 +114,10 @@ export function Sidebar({
             </div>
           )}
         </nav>
-        {editor && (
-          <ContainerEditor editor={editor} onClose={() => setEditor(null)} />
-        )}
       </aside>
+      {editor && (
+        <ContainerEditor editor={editor} onClose={() => setEditor(null)} />
+      )}
     </>
   );
 }
