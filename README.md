@@ -164,3 +164,5 @@ In Vercel, select the project root, use `npm run build` as the build command, an
 ## AI usage log
 
 AI assistance was used for initial scaffolding, implementation acceleration, test drafting, code search, and review of responsive/UI details. The implementation was then directed and corrected through manual product review against the assignment: the large initial page was split into feature components; non-functional controls were removed; filters/sorting, bulk updates, task creation fields, modal/drawer behavior, loading/empty/error feedback, drag insertion targets, permission checks, consistent iconography, and responsive behavior were added or refined. Final architecture decisions, claims in this README, and test/build verification were reviewed against the actual source code.
+
+See [AI_USAGE.md](./AI_USAGE.md) for the detailed prompt, correction, and rejected-output log.
