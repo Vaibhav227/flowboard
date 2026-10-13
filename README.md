@@ -2,6 +2,8 @@
 
 ![Flowboard](./public/flowboard-logo.png)
 
+Demo - https://drive.google.com/file/d/1JYTylCzfYDbAD1AkdwiftLNC0Tj6CLM1/view
+
 Flowboard is a frontend-only project workspace built for the task-management take-home assignment. It is designed to feel like a small, professional productivity product rather than a static CRUD demo: users can navigate a permission-aware workspace hierarchy, switch between Kanban and list views, create and edit tasks, drag tasks between statuses, bulk-update selected tasks, and recover from simulated failures.
 
 The interface uses a light orange visual system with accessible contrast, consistent spacing, standard Lucide icons, responsive layouts, drawers/modals, keyboard support, and explicit loading, empty, success, and error feedback.
