@@ -1,1 +1,2 @@
+*.mov filter=lfs diff=lfs merge=lfs -text
 flowboard_demo.mov filter=lfs diff=lfs merge=lfs -text
