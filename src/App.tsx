@@ -108,7 +108,7 @@ export function App() {
                   {activeList?.name ?? "No accessible list"}
                 </h1>
                 <p className="mt-1 text-sm text-slate-500">
-                  {tasks.length} tasks · Keep your launch moving.
+                  {tasks.length} tasks
                 </p>
               </div>
               <button

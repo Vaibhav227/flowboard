@@ -39,7 +39,7 @@ export function Sidebar({
   const spaces = state.containers.filter(
     (item) =>
       item.type === "space" && !item.archivedAt && canAccess(state, item.id),
-  );
+  ).sort((a, b) => a.position - b.position);
 
   const admin = currentUser(state).role === "admin";
   const workspace = state.containers.find((item) => item.type === "workspace")!;
@@ -142,7 +142,7 @@ function TreeSpace({
       item.type === "folder" &&
       !item.archivedAt &&
       canAccess(state, item.id),
-  );
+  ).sort((a, b) => a.position - b.position);
 
   return (
     <div className="py-1">
@@ -162,6 +162,7 @@ function TreeSpace({
                 item.type === "list" &&
                 visibleListIds.has(item.id),
             )
+            .sort((a, b) => a.position - b.position)
             .map((list) => (
               <TreeList
                 key={list.id}
